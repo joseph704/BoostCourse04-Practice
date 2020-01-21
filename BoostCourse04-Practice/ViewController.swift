@@ -11,6 +11,22 @@ import Photos
 class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,PHPhotoLibraryChangeObserver {
     
     @IBOutlet weak var tableView:UITableView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBAction func touchUpDownloadButton(_ sender: Any) {
+        guard let imageURL: URL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg") else { return }
+        // 자식 스레드에는 데이터 다운로드 부분
+        OperationQueue().addOperation {
+            let imageData:Data = try! Data.init(contentsOf: imageURL)
+            guard let image:UIImage = UIImage(data: imageData) else { return }
+            // 애플리케이션 뷰 부분은 메인 스레드에서 동작해야함!
+            OperationQueue.main.addOperation {
+                self.imageView.image = image
+            }
+        }
+        
+        
+        
+    }
     
     var fetchResult: PHFetchResult<PHAsset>!
     let imageManager: PHCachingImageManager = PHCachingImageManager()
@@ -18,6 +34,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     func requestCollection() {
         
+        // fetchResult 클래스를 사용해
         let cameraRoll: PHFetchResult<PHAssetCollection> = PHAssetCollection.fetchAssetCollections(with: . smartAlbum, subtype: . smartAlbumUserLibrary, options:nil)
         guard let cameraRollCollection = cameraRoll.firstObject else { return }
         

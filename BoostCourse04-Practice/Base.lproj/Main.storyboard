@@ -15,9 +15,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5j-Wt-GNq">
+                                <rect key="frame" x="0.0" y="44" width="287" height="170"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="jvz-TH-6xJ"/>
+                                    <constraint firstAttribute="height" constant="170" id="qXY-lb-lPA"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G5k-Sf-gc8">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <rect key="frame" x="0.0" y="229" width="414" height="529"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="414" id="LqL-Db-JI7"/>
+                                    <constraint firstAttribute="height" constant="529" id="g5J-is-4dJ"/>
+                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="03b-Nw-mwy">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
@@ -33,23 +44,41 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="IAU-3K-WiR"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfF-NM-KBA">
+                                <rect key="frame" x="328" y="114" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="1AU-tA-89f"/>
+                                    <constraint firstAttribute="width" constant="46" id="YdC-c6-8RN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <state key="normal" title="Download"/>
+                                <connections>
+                                    <action selector="touchUpDownloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fo1-96-4rP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G5k-Sf-gc8" secondAttribute="bottom" id="U8x-Cv-kP7"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="G5k-Sf-gc8" secondAttribute="trailing" id="aAS-5c-J17"/>
-                            <constraint firstItem="G5k-Sf-gc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="eNy-ds-B7f"/>
-                            <constraint firstItem="G5k-Sf-gc8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="k2z-n8-boI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G5k-Sf-gc8" secondAttribute="bottom" constant="104" id="34L-Ay-VJR"/>
+                            <constraint firstItem="tfF-NM-KBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="BZI-vS-z2O"/>
+                            <constraint firstItem="G5k-Sf-gc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CmC-BY-yia"/>
+                            <constraint firstItem="q5j-Wt-GNq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kcr-hZ-DgM"/>
+                            <constraint firstItem="G5k-Sf-gc8" firstAttribute="top" secondItem="q5j-Wt-GNq" secondAttribute="bottom" constant="15" id="caN-ib-N7R"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tfF-NM-KBA" secondAttribute="trailing" constant="40" id="cdX-HM-ZfV"/>
+                            <constraint firstItem="q5j-Wt-GNq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jRP-SD-RHX"/>
+                            <constraint firstItem="G5k-Sf-gc8" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sOA-Ii-JKB"/>
+                            <constraint firstItem="tfF-NM-KBA" firstAttribute="leading" secondItem="q5j-Wt-GNq" secondAttribute="trailing" constant="41" id="yv1-oC-Cn8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="imageView" destination="q5j-Wt-GNq" id="YtV-4R-0qF"/>
                         <outlet property="tableView" destination="G5k-Sf-gc8" id="e4f-eu-uRW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="134"/>
+            <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
         </scene>
     </scenes>
 </document>
