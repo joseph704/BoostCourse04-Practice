@@ -12,6 +12,7 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
     
     @IBOutlet weak var tableView:UITableView!
     @IBOutlet weak var imageView: UIImageView!
+    
     @IBAction func touchUpDownloadButton(_ sender: Any) {
         guard let imageURL: URL = URL(string: "https://upload.wikimedia.org/wikipedia/commons/3/3d/LARGE_elevation.jpg") else { return }
         // 자식 스레드에는 데이터 다운로드 부분
@@ -23,9 +24,9 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
                 self.imageView.image = image
             }
         }
-        
-        
-        
+    }
+    @IBAction func touchUpRefreshButton(_ sender:UIBarButtonItem) {
+        self.tableView.reloadSections(IndexSet(0...0), with: .automatic)
     }
     
     var fetchResult: PHFetchResult<PHAsset>!
