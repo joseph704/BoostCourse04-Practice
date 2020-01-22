@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -59,13 +60,23 @@
                                     <action selector="touchUpDownloadButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fo1-96-4rP"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heM-Kh-E8O">
+                                <rect key="frame" x="127" y="748" width="160" height="30"/>
+                                <state key="normal" title="Move to CollectionView"/>
+                                <connections>
+                                    <segue destination="YBR-I4-bW7" kind="show" id="jwR-pI-RT9"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="heM-Kh-E8O" secondAttribute="trailing" constant="127" id="2Sj-3a-6VM"/>
+                            <constraint firstItem="heM-Kh-E8O" firstAttribute="top" secondItem="G5k-Sf-gc8" secondAttribute="bottom" constant="39" id="2eF-AH-pk7"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="G5k-Sf-gc8" secondAttribute="bottom" constant="104" id="34L-Ay-VJR"/>
                             <constraint firstItem="tfF-NM-KBA" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="BZI-vS-z2O"/>
                             <constraint firstItem="G5k-Sf-gc8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CmC-BY-yia"/>
                             <constraint firstItem="q5j-Wt-GNq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Kcr-hZ-DgM"/>
+                            <constraint firstItem="heM-Kh-E8O" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="Scv-Ix-UDo"/>
                             <constraint firstItem="G5k-Sf-gc8" firstAttribute="top" secondItem="q5j-Wt-GNq" secondAttribute="bottom" constant="15" id="caN-ib-N7R"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tfF-NM-KBA" secondAttribute="trailing" constant="40" id="cdX-HM-ZfV"/>
                             <constraint firstItem="q5j-Wt-GNq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="jRP-SD-RHX"/>
@@ -162,6 +173,56 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAb-BB-Fjf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="133.92857142857142"/>
+        </scene>
+        <!--Collection View Controller-->
+        <scene sceneID="7em-Wz-iYp">
+            <objects>
+                <viewController id="YBR-I4-bW7" customClass="CollectionViewController" customModule="BoostCourse04_Practice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="YwV-cE-LgQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="K8x-nB-lal">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Wnw-JZ-F3j">
+                                    <size key="itemSize" width="139" height="151"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="NVZ-xZ-Pb0">
+                                        <rect key="frame" x="0.0" y="0.0" width="139" height="151"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LuS-ml-7WR">
+                                            <rect key="frame" x="0.0" y="0.0" width="139" height="151"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.96954888110000004" green="0.72750282290000001" blue="0.19192066790000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        </collectionViewCellContentView>
+                                        <size key="customSize" width="139" height="151"/>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="YBR-I4-bW7" id="Xyj-jb-Mo3"/>
+                                    <outlet property="delegate" destination="YBR-I4-bW7" id="rGL-i7-9rh"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="HEW-QW-DCj" firstAttribute="trailing" secondItem="K8x-nB-lal" secondAttribute="trailing" id="OfE-xO-J3r"/>
+                            <constraint firstItem="HEW-QW-DCj" firstAttribute="bottom" secondItem="K8x-nB-lal" secondAttribute="bottom" id="Yxy-La-DYS"/>
+                            <constraint firstItem="K8x-nB-lal" firstAttribute="leading" secondItem="HEW-QW-DCj" secondAttribute="leading" id="fBh-tg-znd"/>
+                            <constraint firstItem="K8x-nB-lal" firstAttribute="top" secondItem="HEW-QW-DCj" secondAttribute="top" id="fWb-X2-8e5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HEW-QW-DCj"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="mXZ-LM-ULL"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EP2-WE-zC5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1371.0144927536232" y="857.14285714285711"/>
         </scene>
     </scenes>
 </document>

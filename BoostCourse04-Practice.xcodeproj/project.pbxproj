@@ -14,6 +14,7 @@
 		23C45AE723D5C9BF00ED7B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C45AE623D5C9BF00ED7B96 /* Assets.xcassets */; };
 		23C45AEA23D5C9BF00ED7B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C45AE823D5C9BF00ED7B96 /* LaunchScreen.storyboard */; };
 		23E4FC9C23D833F400900156 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4FC9B23D833F400900156 /* ImageZoomViewController.swift */; };
+		23E4FC9E23D878A700900156 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4FC9D23D878A700900156 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		23C45AE923D5C9BF00ED7B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23C45AEB23D5C9BF00ED7B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23E4FC9B23D833F400900156 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
+		23E4FC9D23D878A700900156 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 				23C45ADF23D5C9BE00ED7B96 /* SceneDelegate.swift */,
 				23C45AE123D5C9BE00ED7B96 /* ViewController.swift */,
 				23C45AE323D5C9BE00ED7B96 /* Main.storyboard */,
+				23E4FC9D23D878A700900156 /* CollectionViewController.swift */,
 				23C45AE623D5C9BF00ED7B96 /* Assets.xcassets */,
 				23C45AE823D5C9BF00ED7B96 /* LaunchScreen.storyboard */,
 				23C45AEB23D5C9BF00ED7B96 /* Info.plist */,
@@ -145,6 +148,7 @@
 				23C45ADE23D5C9BE00ED7B96 /* AppDelegate.swift in Sources */,
 				23C45AE023D5C9BE00ED7B96 /* SceneDelegate.swift in Sources */,
 				23E4FC9C23D833F400900156 /* ImageZoomViewController.swift in Sources */,
+				23E4FC9E23D878A700900156 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
