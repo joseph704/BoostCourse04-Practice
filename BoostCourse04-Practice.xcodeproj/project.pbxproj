@@ -13,6 +13,7 @@
 		23C45AE523D5C9BE00ED7B96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C45AE323D5C9BE00ED7B96 /* Main.storyboard */; };
 		23C45AE723D5C9BF00ED7B96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23C45AE623D5C9BF00ED7B96 /* Assets.xcassets */; };
 		23C45AEA23D5C9BF00ED7B96 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23C45AE823D5C9BF00ED7B96 /* LaunchScreen.storyboard */; };
+		23E4FC9C23D833F400900156 /* ImageZoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E4FC9B23D833F400900156 /* ImageZoomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		23C45AE623D5C9BF00ED7B96 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		23C45AE923D5C9BF00ED7B96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		23C45AEB23D5C9BF00ED7B96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		23E4FC9B23D833F400900156 /* ImageZoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageZoomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				23C45AE623D5C9BF00ED7B96 /* Assets.xcassets */,
 				23C45AE823D5C9BF00ED7B96 /* LaunchScreen.storyboard */,
 				23C45AEB23D5C9BF00ED7B96 /* Info.plist */,
+				23E4FC9B23D833F400900156 /* ImageZoomViewController.swift */,
 			);
 			path = "BoostCourse04-Practice";
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				23C45AE223D5C9BE00ED7B96 /* ViewController.swift in Sources */,
 				23C45ADE23D5C9BE00ED7B96 /* AppDelegate.swift in Sources */,
 				23C45AE023D5C9BE00ED7B96 /* SceneDelegate.swift in Sources */,
+				23E4FC9C23D833F400900156 /* ImageZoomViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

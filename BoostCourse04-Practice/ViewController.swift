@@ -113,5 +113,13 @@ class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate
         }
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let nextViewController: ImageZoomViewController = segue.destination as? ImageZoomViewController else { return }
+        
+        guard let cell : UITableViewCell = sender as? UITableViewCell else { return }
+        
+        guard let index: IndexPath = self.tableView.indexPath(for: cell) else { return }
+        nextViewController.asset = self.fetchResult[index.row]
+    }
 }
 
