@@ -9,15 +9,37 @@
 import UIKit
 
 class CollectionViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
+    
+    @IBOutlet weak var collectionView:UICollectionView!
     var numberOfCell: Int = 10
     let cellIdentifier: String = "cell"
+    var friends: [Friend] = []
+    
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let jsonDecoder:JSONDecoder = JSONDecoder()
+        guard let dataAseet:NSDataAsset = NSDataAsset(name: "friends") else { return }
+        
+        do {
+            self.friends = try jsonDecoder.decode([Friend].self, from: dataAseet.data)
+        } catch {
+            print(error.localizedDescription)
+        }
+        
+        self.collectionView.reloadData()
+    }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.numberOfCell
+        return friends.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: UICollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath)
+        guard let cell: FriendCollectionViewCell = (collectionView.dequeueReusableCell(withReuseIdentifier: self.cellIdentifier, for: indexPath) as? FriendCollectionViewCell) else {return FriendCollectionViewCell()}
+        let friend:Friend = friends[indexPath.item]
+        cell.addressLabel.text = friend.fullAddress
+        cell.nameAgeLabel.text = friend.nameAndAge
         return cell
     }
     
@@ -25,12 +47,6 @@ class CollectionViewController: UIViewController,UICollectionViewDataSource,UICo
         self.numberOfCell += 1
         collectionView.reloadData()
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-    
 
     /*
     // MARK: - Navigation
